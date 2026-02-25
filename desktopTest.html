@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+   
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            size: 450px 900px;
+            /* Make the whole page dark just in case */
+            background-color: #121212; 
+        }
+
+        #main-widget {
+            background-color: #212121; /* Dark Grey Card */
+            width: 450px;
+            height: 800px;
+            position: absolute; /* Important for inner items */
+            margin: 0px;       /* Pushes it away from the edge slightly */
+        }
+        
+        /* Temporary text style so you can see it */
+        h1 {
+            position: absolute;
+            color: white;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            top: 24px;
+            font-size: 64px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        kda1 {
+            position: absolute;
+            color: white;
+            left: 144px;
+            top: 160px;
+            width:149px ;
+            height: auto;
+             display:flex;
+           justify-content: center;
+           
+            
+            font-size: 32px;
+            line-height: 1;
+            margin: 0;
+        }
+        kda2 {
+            position: absolute;
+            color: white;
+            left: 144px;
+            top: 270px;
+          
+            width:149px ;
+            height: auto;
+             display:flex;
+           justify-content: center;
+            font-size: 32px;
+            line-height: 1;
+            margin: 0;
+        }
+        kda3 {
+            position: absolute;
+            color: white;
+            left: 144px;
+            top: 380px;
+          
+            width:149px ;
+            height: auto;
+             display:flex;
+           justify-content: center;
+            font-size: 32px;
+            line-height: 1;
+            margin: 0;
+        }
+        kda4 {
+            position: absolute;
+            color: white;
+            left: 144px;
+            top: 490px;
+           
+            width:149px ;
+            height: auto;
+             display:flex;
+           justify-content: center;
+            font-size: 32px;
+            line-height: 1;
+            margin: 0;
+        }
+        kda5 {
+            position: absolute;
+            color: white;
+            left: 144px;
+            top: 600px;
+           width:149px ;
+            height: auto;
+             display:flex;
+           justify-content: center;
+            font-size: 32px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        name1 {
+            position: absolute;
+            color: white;
+            left: 132px;
+            top: 128px;
+            width:184px ;
+            height: auto;
+           display:flex;
+           justify-content: center;
+            
+            font-size: 15px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        name2 {
+            position: absolute;
+            color: white;
+            left: 132px;
+            top: 238px;
+            width:184px ;
+            height: auto;
+           display:flex;
+           justify-content: center;
+            
+            font-size: 15px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        name3 {
+            position: absolute;
+            color: white;
+            left: 132px;
+            top: 348px;
+            width:184px ;
+            height: auto;
+           display:flex;
+           justify-content: center;
+            
+            font-size: 15px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        name4 {
+            position: absolute;
+            color: white;
+            left: 132px;
+            top: 458px;
+            width:184px ;
+            height: auto;
+           display:flex;
+           justify-content: center;
+            
+            font-size: 15px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        name5 {
+            position: absolute;
+            color: white;
+            left: 132px;
+            top: 568px;
+            width:184px ;
+            height: auto;
+           display:flex;
+           justify-content: center;
+            
+            font-size: 15px;
+            line-height: 1;
+            margin: 0;
+        }
+
+         mmr {
+            position: absolute;
+            color: white;
+            left: 46px;
+            top: 72px;
+            width:69px ;
+            height: auto;
+           display:flex;
+           justify-content: center;
+            
+            font-size: 14px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        gamemode {
+            position: absolute;
+            color: white;
+            left: 43px;
+            top: 672px;
+            width:170px ;
+            height: auto;
+           display:flex;
+           justify-content: left;
+            
+            font-size: 32px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        isRanked {
+            position: absolute;
+            color: #686666;
+            left: 43px;
+            top: 707px;
+            width:170px ;
+            height: auto;
+           display:flex;
+           justify-content: left;
+            
+            font-size: 16px;
+            line-height: 1;
+            margin: 0;
+        }
+
+         mapName {
+            position: absolute;
+            color: white;
+            left: 236px;
+            top: 672px;
+            width:170px ;
+            height: auto;
+           display:flex;
+           justify-content: right;
+            
+            font-size: 32px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        server {
+            position: absolute;
+            color: #686666;
+            left: 236px;
+            top: 707px;
+            width:170px ;
+            height: auto;
+           display:flex;
+           justify-content: right;
+            
+            font-size: 16px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        hs {
+            position: absolute;
+            color: white;
+            left: 320px;
+            top: 160px;
+            width:34px ;
+            height: auto;
+           display:flex;
+           justify-content: left;
+            
+            font-size: 14px;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        hsNumbers {
+            position: absolute;
+            color: white;
+            left: 357px;
+            top: 160px;
+            width:45px ;
+            height: auto;
+           display:flex;
+           justify-content: left;
+            
+            font-size: 14px;
+            line-height: 1.3;
+            margin: 0;
+        }
+        .player-card1 {
+             /* Copy the W number here */
+                position: absolute;
+                left: 37px;
+                top: 113px; 
+                width: 375px; 
+                 height: 101px; 
+                 background-image: url('icons/playercard.png');
+                 background-size: 100% 100%;
+                 background-repeat: no-repeat;
+
+                 
+                  /* ... keep your background-image code here ... */
+            }
+
+            .agent-icon1{
+                    position: absolute;
+                    left: 43px;
+                    top: 116px;
+                    width: 89px;
+                    height: 89px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    border-radius: 7%; 
+                }
+
+                .isMe{
+                    position: absolute;
+                    left: 43px;
+                    top: 116px;
+                    width: 363px;
+                    height: 89px;
+                    background-image: url('icons/me_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    
+                }
+
+                .isDead0{
+                    position: absolute;
+                    left: 43px;
+                    top: 116px;
+                    width: 363px;
+                    height: 89px;
+                    background-image: url('icons/dead_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                    
+                }
+
+
+            .player-card2 {
+             /* Copy the W number here */
+               position: absolute;
+                left: 37px;
+                top: 223px; 
+                width: 375px; 
+                 height: 101px; 
+                 background-image: url('icons/playercard.png');
+                 background-size: 100% 100%;
+                 background-repeat: no-repeat;
+
+                 
+            }
+
+             .isParty1{
+                    position: absolute;
+                    left: 43px;
+                    top: 226px;
+                    width: 363px;
+                    height: 89px;
+                    background-image: url('icons/party_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                
+                    visibility: hidden;
+                }
+
+                .isDead1{
+                    position: absolute;
+                    left: 43px;
+                    top: 226px;
+                    width: 363px;
+                    height: 89px;
+                    background-image: url('icons/dead_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    
+                    visibility: hidden;
+                }
+
+            .agent-icon2{
+                    position: absolute;
+                    left: 43px;
+                    top: 226px;
+                    width: 89px;
+                    height: 89px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    border-radius: 7%; 
+                }
+
+            .player-card3 {
+             position: absolute;
+                left: 37px;
+                top: 333px; 
+                width: 375px; 
+                 height: 101px; 
+                 background-image: url('icons/playercard.png');
+                 background-size: 100% 100%;
+                 background-repeat: no-repeat;
+
+                 
+            }
+
+            
+             .isParty2{
+                    position: absolute;
+                    left: 43px;
+                    top: 336px;
+                    width: 363px;
+                    height: 89px;
+                    background-image: url('icons/party_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                     
+                    visibility: hidden;
+                }
+
+                 .isDead2{
+                    position: absolute;
+                    left: 43px;
+                    top: 336px;
+                    width: 363px;
+                    height: 89px;
+                    background-image: url('icons/dead_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                     
+                    visibility: hidden;
+                }
+
+            .agent-icon3{
+                    position: absolute;
+                    left: 43px;
+                    top: 336px;
+                    width: 89px;
+                    height: 89px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    border-radius: 7%; 
+                }
+
+            .player-card4 {
+             position: absolute;
+                left: 37px;
+                top: 443px; 
+                width: 375px; 
+                 height: 101px; 
+                 background-image: url('icons/playercard.png');
+                 background-size: 100% 100%;
+                 background-repeat: no-repeat;
+            }
+
+            
+             .isParty3{
+                    position: absolute;
+                    left: 43px;
+                    top: 446px;
+                    width: 363px;
+                    height: 89px;
+                    background-image: url('icons/party_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                    visibility: hidden;
+                }
+
+                .isDead3{
+                    position: absolute;
+                    left: 43px;
+                    top: 446px;
+                    width: 363px;
+                    height: 89px;
+                    background-image: url('icons/dead_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                    visibility: hidden;
+                }
+
+            .agent-icon4{
+                    position: absolute;
+                    left: 43px;
+                    top: 446px;
+                    width: 89px;
+                    height: 89px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    border-radius: 7%; 
+                }
+
+            .player-card5 {
+              position: absolute;
+                left: 37px;
+                top: 553px; 
+                width: 375px; 
+                 height: 101px; 
+                 background-image: url('icons/playercard.png');
+                 background-size: 100% 100%;
+                 background-repeat: no-repeat;
+            }
+
+            
+             .isParty4{
+                    position: absolute;
+                    left: 43px;
+                    top: 556px;
+                    width: 363px;
+                    height: 89px;
+                    background-image: url('icons/party_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                    visibility: hidden;
+                }
+                 .isDead4{
+                    position: absolute;
+                    left: 43px;
+                    top: 556px;
+                    width: 363px;
+                    height: 89px;
+                    background-image: url('icons/dead_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                     
+                    visibility: hidden;
+                }
+
+            .agent-icon5{
+                    position: absolute;
+                    left: 43px;
+                    top: 556px;
+                    width: 89px;
+                    height: 89px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    border-radius: 7%; 
+                }
+
+                .agent-icon6{
+                    position: absolute;
+                    left: 24px;
+                    top: 745px;
+                    width: 55px;
+                    height: 55px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat; 
+                }
+
+                .agent-icon7{
+                    position: absolute;
+                    left: 110px;
+                    top: 745px;
+                    width: 55px;
+                    height: 55px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat; 
+                }
+
+                .agent-icon8{
+                    position: absolute;
+                    left: 196px;
+                    top: 745px;
+                    width: 55px;
+                    height: 55px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat; 
+                }
+
+                
+                .agent-icon9{
+                    position: absolute;
+                    left: 282px;
+                    top: 745px;
+                    width: 55px;
+                    height: 55px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat; 
+                }
+
+                   .agent-icon10{
+                    position: absolute;
+                    left: 368px;
+                    top: 745px;
+                    width: 55px;
+                    height: 55px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat; 
+                }
+                
+
+                
+            .rank-icon1{
+                    position: absolute;
+                    left: 22px;
+                    top: 169px;
+                    width: 53px;
+                    height: 53px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                .rank-icon2{
+                    position: absolute;
+                    left: 22px;
+                    top: 279px;
+                    width: 53px;
+                    height: 53px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                .rank-icon3{
+                    position: absolute;
+                    left: 22px;
+                    top: 389px;
+                    width: 53px;
+                    height: 53px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                .rank-icon4{
+                    position: absolute;
+                    left: 22px;
+                    top: 499px;
+                    width: 53px;
+                    height: 53px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                .rank-icon5{
+                    position: absolute;
+                    left: 22px;
+                    top: 609px;
+                    width: 53px;
+                    height: 53px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+                .rank-icon6{
+                    position: absolute;
+                    left: 6px;
+                    top: 760px;
+                    width: 36px;
+                    height: 36px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                   .rank-icon7{
+                    position: absolute;
+                    left: 92px;
+                    top: 760px;
+                    width: 36px;
+                    height: 36px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                     .rank-icon8{
+                    position: absolute;
+                    left: 178px;
+                    top: 760px;
+                    width: 36px;
+                    height: 36px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                     .rank-icon9{
+                    position: absolute;
+                    left: 264px;
+                    top: 760px;
+                    width: 36px;
+                    height: 36px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                   .rank-icon10{
+                    position: absolute;
+                    left: 350px;
+                    top: 760px;
+                    width: 36px;
+                    height: 36px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                   .peak-rank0{
+                    position: absolute;
+                    left: 108px;
+                    top: 181px;
+                    width: 30px;
+                    height: 30px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                   .peak-rank1{
+                    position: absolute;
+                    left: 108px;
+                    top: 291px;
+                    width: 30px;
+                    height: 30px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                   .peak-rank2{
+                    position: absolute;
+                    left: 108px;
+                    top: 401px;
+                    width: 30px;
+                    height: 30px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                   .peak-rank3{
+                    position: absolute;
+                    left: 108px;
+                    top: 511px;
+                    width: 30px;
+                    height: 30px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                   .peak-rank4{
+                    position: absolute;
+                    left: 108px;
+                    top: 621px;
+                    width: 30px;
+                    height: 30px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                   
+                }
+
+                  .ult-point0-1{
+                    position: absolute;
+                    left: 51px;
+                    top: 105px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                     .ult-point0-2{
+                    position: absolute;
+                    left: 72px;
+                    top: 105px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point0-3{
+                    position: absolute;
+                    left: 93px;
+                    top: 105px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point0-4{
+                    position: absolute;
+                    left: 114px;
+                    top: 105px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point0-5{
+                    position: absolute;
+                    left: 135px;
+                    top: 105px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point0-6{
+                    position: absolute;
+                    left: 156px;
+                    top: 105px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point0-7{
+                    position: absolute;
+                    left: 177px;
+                    top: 105px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point0-8{
+                    position: absolute;
+                    left: 198px;
+                    top: 105px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point0-9{
+                    position: absolute;
+                    left: 219px;
+                    top: 105px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                
+                  .ult-point1-1{
+                    position: absolute;
+                    left: 51px;
+                    top: 215px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                     .ult-point1-2{
+                    position: absolute;
+                    left: 72px;
+                    top: 215px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point1-3{
+                    position: absolute;
+                    left: 93px;
+                    top: 215px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point1-4{
+                    position: absolute;
+                    left: 114px;
+                    top: 215px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point1-5{
+                    position: absolute;
+                    left: 135px;
+                    top: 215px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point1-6{
+                    position: absolute;
+                    left: 156px;
+                    top: 215px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point1-7{
+                    position: absolute;
+                    left: 177px;
+                    top: 215px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point1-8{
+                    position: absolute;
+                    left: 198px;
+                    top: 215px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point1-9{
+                    position: absolute;
+                    left: 219px;
+                    top: 215px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                
+                  .ult-point2-1{
+                    position: absolute;
+                    left: 51px;
+                    top: 325px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                     .ult-point2-2{
+                    position: absolute;
+                    left: 72px;
+                    top: 325px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point2-3{
+                    position: absolute;
+                    left: 93px;
+                    top: 325px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point2-4{
+                    position: absolute;
+                    left: 114px;
+                    top: 325px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point2-5{
+                    position: absolute;
+                    left: 135px;
+                    top: 325px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point2-6{
+                    position: absolute;
+                    left: 156px;
+                    top: 325px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point2-7{
+                    position: absolute;
+                    left: 177px;
+                    top: 325px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point2-8{
+                    position: absolute;
+                    left: 198px;
+                    top: 325px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point2-9{
+                    position: absolute;
+                    left: 219px;
+                    top: 325px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                 
+                  .ult-point3-1{
+                    position: absolute;
+                    left: 51px;
+                    top: 435px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                     .ult-point3-2{
+                    position: absolute;
+                    left: 72px;
+                    top: 435px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point3-3{
+                    position: absolute;
+                    left: 93px;
+                    top: 435px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point3-4{
+                    position: absolute;
+                    left: 114px;
+                    top: 435px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point3-5{
+                    position: absolute;
+                    left: 135px;
+                    top: 435px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point3-6{
+                    position: absolute;
+                    left: 156px;
+                    top: 435px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point3-7{
+                    position: absolute;
+                    left: 177px;
+                    top: 435px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point3-8{
+                    position: absolute;
+                    left: 198px;
+                    top: 435px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point3-9{
+                    position: absolute;
+                    left: 219px;
+                    top: 435px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                 
+                  .ult-point4-1{
+                    position: absolute;
+                    left: 51px;
+                    top: 545px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                     .ult-point4-2{
+                    position: absolute;
+                    left: 72px;
+                    top: 545px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point4-3{
+                    position: absolute;
+                    left: 93px;
+                    top: 545px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point4-4{
+                    position: absolute;
+                    left: 114px;
+                    top: 545px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point4-5{
+                    position: absolute;
+                    left: 135px;
+                    top: 545px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point4-6{
+                    position: absolute;
+                    left: 156px;
+                    top: 545px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point4-7{
+                    position: absolute;
+                    left: 177px;
+                    top: 545px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point4-8{
+                    position: absolute;
+                    left: 198px;
+                    top: 545px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                       .ult-point4-9{
+                    position: absolute;
+                    left: 219px;
+                    top: 545px;
+                    width: 21px;
+                    height: 21px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+
+                .ult-placeholder0{
+                    position: absolute;
+                    left: 20px;
+                    top: 124px;
+                    width: 45px;
+                    height: 45px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                .has-ult0{
+                    position: absolute;
+                    left: 20px;
+                    top: 124px;
+                    width: 45px;
+                    height: 45px;
+                    background-image: url('icons/Ult_white.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                   
+                }
+
+                 .ult-placeholder1{
+                    position: absolute;
+                    left: 20px;
+                    top: 234px;
+                    width: 45px;
+                    height: 45px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                .has-ult1{
+                    position: absolute;
+                    left: 20px;
+                    top: 234px;
+                    width: 45px;
+                    height: 45px;
+                    background-image: url('icons/Ult_white.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                   
+                }
+
+                 .ult-placeholder2{
+                    position: absolute;
+                    left: 20px;
+                    top: 344px;
+                    width: 45px;
+                    height: 45px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                .has-ult2{
+                    position: absolute;
+                    left: 20px;
+                    top: 344px;
+                    width: 45px;
+                    height: 45px;
+                    background-image: url('icons/Ult_white.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                   
+                }
+
+                    .ult-placeholder3{
+                    position: absolute;
+                    left: 20px;
+                    top: 454px;
+                    width: 45px;
+                    height: 45px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                  .has-ult3{
+                    position: absolute;
+                    left: 20px;
+                    top: 454px;
+                    width: 45px;
+                    height: 45px;
+                    background-image: url('icons/Ult_white.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                   
+                }
+
+                
+                    .ult-placeholder4{
+                    position: absolute;
+                    left: 20px;
+                    top: 564px;
+                    width: 45px;
+                    height: 45px;
+                    background-image: url('icons/Ult_.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                .has-ult4{
+                    position: absolute;
+                    left: 20px;
+                    top: 564px;
+                    width: 45px;
+                    height: 45px;
+                    background-image: url('icons/Ult_white.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                   
+                }
+
+                .highlight {
+                     color: #686666; /* Change this to whatever color you want */
+                }
+
+                 .small-highlight {
+                     color: #686666;
+                     font-size: 16px; /* Change this to whatever color you want */
+                }
+                
+                .half-rank{
+                    position: absolute;
+                    left: 54px;
+                    top: 41px;
+                    width: 53px;
+                    height: 53px;
+                    background-image: url('icons/empty.png');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                    opacity: 0.5;
+                   
+                }
+
+                .shield1{
+                    position: absolute;
+                    left: 346px;
+                    top: 31px;
+                    width: 46px;
+                    height: 46px;
+                    background-image: url('icons/shield_1.webp');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                   
+                }
+
+                .has-spike0{
+                    position: absolute;
+                    left: 346px;
+                    top: 31px;
+                    width: 46px;
+                    height: 46px;
+                    background-image: url('icons/spike.webp');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                   
+                }
+
+                .has-spike1{
+                    position: absolute;
+                    left: 340px;
+                    top: 268px;
+                    width: 39px;
+                    height: 39px;
+                    background-image: url('icons/spike.webp');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                   
+                }
+
+                .has-spike2{
+                    position: absolute;
+                    left: 340px;
+                    top: 378px;
+                    width: 39px;
+                    height: 39px;
+                    background-image: url('icons/spike.webp');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                   
+                }
+
+                .has-spike3{
+                    position: absolute;
+                    left: 340px;
+                    top: 488px;
+                    width: 39px;
+                    height: 39px;
+                    background-image: url('icons/spike.webp');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                   
+                }
+
+                .has-spike4{
+                    position: absolute;
+                    left: 340px;
+                    top: 598px;
+                    width: 39px;
+                    height: 39px;
+                    background-image: url('icons/spike.webp');
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: hidden;
+                   
+                }
+
+                 .primaryContainer0{
+                    position: absolute;
+                    left: 320px;
+                    top: 120px;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80px;
+                    height: 36px;
+                
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                .primaryContainer0 img {
+              /* Tell image to take up maximum available space in the box */
+                width: 100%;
+                height: 100%;
+    
+    
+                object-fit: contain; 
+                    }
+
+                     .primaryContainer1{
+                    position: absolute;
+                    left: 320px;
+                    top: 230px;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80px;
+                    height: 36px;
+                
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                .primaryContainer1 img {
+              /* Tell image to take up maximum available space in the box */
+                width: 100%;
+                height: 100%;
+    
+    
+                object-fit: contain; 
+                    }
+
+                      .primaryContainer2{
+                    position: absolute;
+                    left: 320px;
+                    top: 340px;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80px;
+                    height: 36px;
+                
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                .primaryContainer2 img {
+              /* Tell image to take up maximum available space in the box */
+                width: 100%;
+                height: 100%;
+    
+    
+                object-fit: contain; 
+                    }
+
+                       .primaryContainer3{
+                    position: absolute;
+                    left: 320px;
+                    top: 450px;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80px;
+                    height: 36px;
+                
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                .primaryContainer3 img {
+              /* Tell image to take up maximum available space in the box */
+                width: 100%;
+                height: 100%;
+    
+    
+                object-fit: contain; 
+                    }
+
+                    .primaryContainer4{
+                    position: absolute;
+                    left: 320px;
+                    top: 560px;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80px;
+                    height: 36px;
+                
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    visibility: visible;
+                   
+                }
+
+                .primaryContainer4 img {
+              /* Tell image to take up maximum available space in the box */
+                width: 100%;
+                height: 100%;
+    
+    
+                object-fit: contain; 
+                    }
+
+
+
+
+
+
+             
+    </style>
+</head>
+
+<body>
+
+    <div id="main-widget">
+        <h1 id="htmlscore">-:-</h1>
+    
+    </div>
+    <div class="player-card1"></div>
+    <div class="isMe"></div>
+    <div class="isDead0"></div>
+    <div class="player-card2"></div>
+    <div class="player-card3"></div>
+    <div class="player-card4"></div>
+    <div class="player-card5"></div>
+    <div class="isParty2"></div>
+    <div class="isParty3"></div>
+    <div class="isParty4"></div>
+    <div class="isParty5"></div>
+    <div class="isDead1"></div>
+    <div class="isDead2"></div>
+    <div class="isDead3"></div>
+    <div class="isDead4"></div>
+
+    <div class="ult-point0-1"></div>
+    <div class="ult-point0-2"></div>
+    <div class="ult-point0-3"></div>
+    <div class="ult-point0-4"></div>
+    <div class="ult-point0-5"></div>
+    <div class="ult-point0-6"></div>
+    <div class="ult-point0-7"></div>
+    <div class="ult-point0-8"></div>
+    <div class="ult-point0-9"></div>
+
+    <div class="ult-point1-1"></div>
+    <div class="ult-point1-2"></div>
+    <div class="ult-point1-3"></div>
+    <div class="ult-point1-4"></div>
+    <div class="ult-point1-5"></div>
+    <div class="ult-point1-6"></div>
+    <div class="ult-point1-7"></div>
+    <div class="ult-point1-8"></div>
+    <div class="ult-point1-9"></div>
+
+    <div class="ult-point2-1"></div>
+    <div class="ult-point2-2"></div>
+    <div class="ult-point2-3"></div>
+    <div class="ult-point2-4"></div>
+    <div class="ult-point2-5"></div>
+    <div class="ult-point2-6"></div>
+    <div class="ult-point2-7"></div>
+    <div class="ult-point2-8"></div>
+    <div class="ult-point2-9"></div>
+
+    <div class="ult-point3-1"></div>
+    <div class="ult-point3-2"></div>
+    <div class="ult-point3-3"></div>
+    <div class="ult-point3-4"></div>
+    <div class="ult-point3-5"></div>
+    <div class="ult-point3-6"></div>
+    <div class="ult-point3-7"></div>
+    <div class="ult-point3-8"></div>
+    <div class="ult-point3-9"></div>
+
+    <div class="ult-point4-1"></div>
+    <div class="ult-point4-2"></div>
+    <div class="ult-point4-3"></div>
+    <div class="ult-point4-4"></div>
+    <div class="ult-point4-5"></div>
+    <div class="ult-point4-6"></div>
+    <div class="ult-point4-7"></div>
+    <div class="ult-point4-8"></div>
+    <div class="ult-point4-9"></div>
+
+    <div class="ult-placeholder0"></div>
+    <div class="ult-placeholder1"></div>
+    <div class="ult-placeholder2"></div>
+    <div class="ult-placeholder3"></div>
+    <div class="ult-placeholder4"></div>
+     <div class="has-ult0"></div>
+      <div class="has-ult1"></div>
+       <div class="has-ult2"></div>
+        <div class="has-ult3"></div>
+         <div class="has-ult4"></div>
+    <div id="htmlagent0" class="agent-icon1"></div>
+    <div id="htmlagent1" class="agent-icon2"></div>
+    <div id="htmlagent2" class="agent-icon3"></div>
+    <div id="htmlagent3" class="agent-icon4"></div>
+    <div id="htmlagent4" class="agent-icon5"></div>
+     <div id="htmlagent5" class="agent-icon10"></div>
+    <div id="htmlagent6" class="agent-icon9"></div>
+    <div id="htmlagent7" class="agent-icon8"></div>
+    <div id="htmlagent8" class="agent-icon7"></div>
+    <div id="htmlagent9" class="agent-icon6"></div>
+    <div id="htmlrank0" class="rank-icon1"></div>
+    <div id="htmlrank1" class="rank-icon2"></div>
+    <div id="htmlrank2" class="rank-icon3"></div>
+    <div id="htmlrank3" class="rank-icon4"></div>
+    <div id="htmlrank4" class="rank-icon5"></div>
+     <div id="htmlrank5" class="rank-icon10"></div>
+    <div id="htmlrank6" class="rank-icon9"></div>
+    <div id="htmlrank7" class="rank-icon8"></div>
+    <div id="htmlrank8" class="rank-icon7"></div>
+    <div id="htmlrank9" class="rank-icon6"></div>
+    <div id="htmlpeakrank0" class="peak-rank0"></div>
+    <div id="htmlpeakrank1" class="peak-rank1"></div>
+    <div id="htmlpeakrank2" class="peak-rank2"></div>
+    <div id="htmlpeakrank3" class="peak-rank3"></div>
+    <div id="htmlpeakrank4" class="peak-rank4"></div>
+    
+    <div id="own-rank" class="half-rank"></div>
+     
+      <div class="has-spike0"></div>
+
+      <div class="has-spike1"></div>
+      <div class="has-spike2"></div>
+      <div class="has-spike3"></div>
+      <div class="has-spike4"></div>
+
+
+      <div class="primaryContainer0">
+    <img src="icons/empty.png"> 
+    </div>
+
+    <div class="primaryContainer1">
+    <img src="icons/empty.png"> 
+    </div>
+    <div class="primaryContainer2">
+    <img src="icons/empty.png"> 
+    </div>
+    <div class="primaryContainer3">
+    <img src="icons/empty.png"> 
+    </div>
+    <div class="primaryContainer4">
+    <img src="icons/empty.png"> 
+    </div>
+
+    <kda1 id="htmlkda0">-/-/-</kda1>
+    <kda2 id="htmlkda1">-/-/-</kda2>
+    <kda3 id="htmlkda2">-/-/-</kda3>
+    <kda4 id="htmlkda3">-/-/-</kda4>
+    <kda5 id="htmlkda4">-/-/-</kda5>
+    <gamemode id="htmlgamemode"></gamemode>
+    <isRanked id="htmlisranked"></isRanked>
+    <mapName id="htmlmap"></mapName>
+    <server></server>
+     
+     
+       
+
+    <mmr id="htmlmmr"></mmr>
+    <hs>HS<br>HSK</hs>
+    <hsnumbers id="htmlhs"><br></hsnumbers>
+
+     <name1 id="htmlname0">
+    <span class="highlight"></span>
+     </name1>
+     
+     <name2 id="htmlname1">
+    <span class="highlight"></span>
+     </name2>
+
+     <name3 id="htmlname2">
+    <span class="highlight"></span>
+     </name3>
+
+     <name4 id="htmlname3">
+    <span class="highlight"></span>
+     </name4>
+
+     <name5 id="htmlname4">
+    <span class="highlight"></span>
+     </name5>
+     
+     
+      <script src="processForLogic4.js"></script>
+    <script src="logic4.js"></script>
+
+     
+
+
+   
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        overwolf.windows.obtainDeclaredWindow("setup", function(result){
+            if (!result.window.id) return;
+            const windowId = result.window.id;
+            overwolf.windows.restore(windowId);
+            overwolf.windows.changeSize("setup", 470, 500);
+    });
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "manifest_version": 1,
+  "type": "WebApp",
+  "meta": {
+    "name": "Sly",
+    "version": "0.0.6",
+    "minimum-overwolf-version": "0.198.0",
+    "author": "Toxic",
+    "icon": "iconV1.png",
+    "description": "Sly for Valorant: hervorgehend aus 0.0.4d (branch mit serverabfrage), ziel: visuelle erweiterungen"
+  },
+  "permissions": ["GameInfo", "FileSystem"],
+  "data": {
+    "start_window": "background",
+    "windows": {
+      "background": {
+        "file": "background.html",
+        "is_background_page": true,
+        "visible": false,
+        "resizable": false
+      },
+
+      "setup": { 
+        "file": "setup.html",
+        "width": 400,
+        "height": 500,
+        "resizable": false,
+        "visible": true,
+        "desktop_only": true
+      },
+
+      "desktop": {
+        "file": "desktopTest.html",
+        "width": 450,
+        "height": 800,
+        "resizable": false,
+        "visible": true,
+        "transparent": false,       
+        "desktop_only": true,       
+        "native_window": false,      
+        "keep_window_location": true
+      }
+    },
+    "game_events": [21640]
+  }
+}

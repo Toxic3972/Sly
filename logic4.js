@@ -8,13 +8,12 @@ var g_interestedInFeatures = [
   'death'
 ]
 
-//hello
-
 var myName = "Unknown";
 var currentAgent = "Unknown";
 var ProcAgentName = "Unknown"; 
 var score = "0:0";
 var weapon = [];
+var shield = [];
 var myRank = "Unranked";
 var lastMatchOutcome = "N/A";
 var gameMode = "Unknown";
@@ -32,6 +31,7 @@ var currentHeadshotKills = 0;
 var currentKills = 0;
 var currentHeadshots = 0;
 var currentRound = 0;
+var currentTeam = null;
 ranks[0]=-1;
 ranks[1]=-1;
 ranks[2]=-1;     
@@ -148,7 +148,7 @@ if(info.res.game_info.scene){
   
    scene = (info.res.game_info.scene);    
 
-if(scene === "Triad" || scene === "Duality" || scene === "Bonsai" || scene === "Ascent" || scene === "Port" || scene === "Foxtrot" || scene === "Canyon" || scene === "Pitt" || scene === "Rook" ||scene === "Jam" || scene === "Juliett" || scene === "Infinity" || scene === "CharacterSelectPersistentLevel"){
+if(scene === "Triad" || scene === "Duality" || scene === "Bonsai" || scene === "Ascent" || scene === "Port" || scene === "Foxtrot" || scene === "Canyon" || scene === "Pitt" || scene === "Rook" ||scene === "Jam" || scene === "Juliett" || scene === "Infinity" || scene === "HURM_HighTide" || scene === "HURM_Helix" || scene === "HURM_Bowl" || scene === "HURM_Yard" || scene === "HURM_Alley" || scene === "CharacterSelectPersistentLevel"){
     if(scene === "CharacterSelectPersistentLevel"){
             currentKills=0;
             currentHeadshotKills=0;
@@ -164,11 +164,13 @@ for(var o=0; o<10; o++){
             rankSet[o] = false;
             ranks[o] = -1;
             peakRanks[o] = -1;
+            shield[o] = -1;
             accuracy(currentHits,currentKills,currentHeadshots,currentHeadshotKills);
             insertRankInHTML(0,o);
             insertPeakInHTML(0,o);
             insertNameInHTML("-", o);
-            insertAgentInHTML("empty",o);   
+            insertAgentInHTML("",o); 
+            insertShieldInHTML(-1,o); 
              isAlive(true, o);
                 hasSpike(false, o);
                 hasUlt(-1, 0, o);
@@ -198,8 +200,10 @@ function setPlayerOrder(info){
     var assists = [];
     var alive = [];
     var spike = [];
+    var shield = [];
     var ult_points = [];
     var max_ult_points = [];
+    var team = [];
     for(var i = 0; i < 10; i++){
         
          player[i] = info.res.match_info["roster_" + i];
@@ -239,12 +243,18 @@ function setPlayerOrder(info){
                 assists[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).assists;
                 alive[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).alive;
                 spike[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).spike;
+                shield[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).shield;
+                team[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).team;
                 ult_points[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).ult_points;
                 max_ult_points[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).ult_max;
                 currentKills = kills[localPlayerNumber];
+                currentTeam = team[localPlayerNumber];
+
+                insertTeamInHTML(currentTeam);
 
                 isAlive(alive[i], position[i]);
                 hasSpike(spike[i], position[i]);
+                insertShieldInHTML(shield[i],position[i]);
                 hasUlt(ult_points[i], max_ult_points[i], position[i]);
                 for(var q = 1; q <= max_ult_points[i]; q++){
                     //grey

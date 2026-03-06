@@ -7,7 +7,7 @@
     "minimum-overwolf-version": "0.198.0",
     "author": "Toxic",
     "icon": "iconV1.png",
-    "description": "Sly for Valorant: hervorgehend aus 0.0.4d (branch mit serverabfrage), ziel: visuelle erweiterungen"
+    "description": "Sly for Valorant: now with playercards instead of overlays"
   },
   "permissions": ["GameInfo", "FileSystem"],
   "data": {

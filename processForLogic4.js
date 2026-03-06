@@ -115,11 +115,25 @@ if (element&& rankName != -1) {
     }
 }
 
+//peak rank 0-9?
 function insertPeakInHTML(rankName,id){
 var element = document.getElementById("htmlpeakrank" + id);
 if (element&& rankName != -1) {
         
         element.style.backgroundImage = "url('icons/" + "rank" + rankName + ".webp')";
+    }
+}
+
+function insertShieldInHTML(shield,id){
+var element = document.getElementById("htmlshield" + id);
+if (element&& shield != -1) {
+        
+        element.style.backgroundImage = "url('icons/" + "shield" + shield + ".webp')";
+    }
+
+    if (element&& shield == -1) {
+        
+        element.style.backgroundImage = "url('icons/empty.png')";
     }
 }
 
@@ -158,6 +172,23 @@ element.innerHTML = map;
 }
 }
 
+function insertTeamInHTML(team){
+
+var element = document.getElementById("htmlteam");
+if (element) {
+
+    if(team === 1){
+        element.innerHTML = "DEF";
+    }
+
+     if(team === 2){
+        element.innerHTML = "ATK";
+    }
+
+
+}
+}
+
 function insertScoreInHTML(score){
 
 var element = document.getElementById("htmlscore");
@@ -182,33 +213,29 @@ function insertWeaponInHTML(weapon, id) {
 }
 }
 
-function insertShieldInHTML(shield, id) {
-    if(shield === undefined) return;
-   
-var element = document.querySelector(".shield" + id);
-
-    if (element) {
-  
-        element.style.backgroundImage = "url('icons/" + "shield_" + shield + ".png')";
-    }
-}
-
 function isAlive(alive, id) {
 
-    var element = document.querySelector(".isDead" + id);
+    id= id+1;
+
+    var element = document.querySelector(".player-card" + id);
    
 
     if (element) {
         if (alive === true || alive === null || alive === undefined) {
-            element.style.visibility = "hidden"; 
+             element.style.backgroundImage = "url('icons/playercard.png')";
+             if(id == 1){
+                 element.style.backgroundImage = "url('icons/me_.png')";
+             }
+             }
             
-        } else if (alive === false) {
+         else if (alive === false) {
             
-            element.style.visibility = "visible";  
+            element.style.backgroundImage = "url('icons/dead_.png')";
             
         }
     }
 }
+
 
 function hasSpike(spike, id) {
 
@@ -279,6 +306,8 @@ if (element) {
 }
 
 
+
+
 const ValorantTools = {
     
     
@@ -341,8 +370,7 @@ const ValorantTools = {
        "Pawn_Guide_Q_PossessableScout_C":"Skye",
        "Pine" : "Veto",
        "Aggrobot" : "Gekko",
-       "KAY/O" : "kayo",
-       "empty" : "empty"
+       "KAY/O" : "kayo"
     },
 
     MAP_MAP: {

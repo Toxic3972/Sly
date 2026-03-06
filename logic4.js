@@ -8,13 +8,12 @@ var g_interestedInFeatures = [
   'death'
 ]
 
-//hello
-
 var myName = "Unknown";
 var currentAgent = "Unknown";
 var ProcAgentName = "Unknown"; 
 var score = "0:0";
 var weapon = [];
+var shield = [];
 var myRank = "Unranked";
 var lastMatchOutcome = "N/A";
 var gameMode = "Unknown";
@@ -32,6 +31,7 @@ var currentHeadshotKills = 0;
 var currentKills = 0;
 var currentHeadshots = 0;
 var currentRound = 0;
+var currentTeam = null;
 ranks[0]=-1;
 ranks[1]=-1;
 ranks[2]=-1;     
@@ -67,6 +67,8 @@ window.addEventListener('load', function() {
 function init() {
       checkEventsHealth();
     overwolf.games.events.setRequiredFeatures(g_interestedInFeatures, function(info) {
+        sendData("connected",0);
+        console.log("sent data");
         if (info.success == false) {
             console.log("Could not set required features: " + info.error);
             return;
@@ -93,7 +95,7 @@ overwolf.games.events.onInfoUpdates2.addListener(function(data) {
     
     if(inMatch(info)){
         setPlayerOrder(info);
-    console.log("Player Order SEt");
+    //console.log("Player Order SEt");
         console.log("in Match called");
         getGameMode(info);
         getMap(info);
@@ -105,7 +107,7 @@ overwolf.games.events.onInfoUpdates2.addListener(function(data) {
             if(ranks[h]==-1 || ranks[h] == undefined || ranks[h] == 0 && rankSet == false ){
                 console.log(JSON.parse(info.res.match_info["roster_" + h]).player_id);
                 ranks[h] = fetchExternalData(JSON.parse(info.res.match_info["roster_" + h]).player_id,h);
-                console.log("fetched");
+                //console.log("fetched");
                
             }
             }
@@ -148,7 +150,7 @@ if(info.res.game_info.scene){
   
    scene = (info.res.game_info.scene);    
 
-if(scene === "Triad" || scene === "Duality" || scene === "Bonsai" || scene === "Ascent" || scene === "Port" || scene === "Foxtrot" || scene === "Canyon" || scene === "Pitt" || scene === "Rook" ||scene === "Jam" || scene === "Juliett" || scene === "Infinity" || scene === "CharacterSelectPersistentLevel"){
+if(scene === "Triad" || scene === "Duality" || scene === "Bonsai" || scene === "Ascent" || scene === "Port" || scene === "Foxtrot" || scene === "Canyon" || scene === "Pitt" || scene === "Rook" ||scene === "Jam" || scene === "Juliett" || scene === "Infinity" || scene === "HURM_HighTide" || scene === "HURM_Helix" || scene === "HURM_Bowl" || scene === "HURM_Yard" || scene === "HURM_Alley" || scene === "CharacterSelectPersistentLevel"){
     if(scene === "CharacterSelectPersistentLevel"){
             currentKills=0;
             currentHeadshotKills=0;
@@ -164,11 +166,13 @@ for(var o=0; o<10; o++){
             rankSet[o] = false;
             ranks[o] = -1;
             peakRanks[o] = -1;
+            shield[o] = -1;
             accuracy(currentHits,currentKills,currentHeadshots,currentHeadshotKills);
             insertRankInHTML(0,o);
             insertPeakInHTML(0,o);
             insertNameInHTML("-", o);
-            insertAgentInHTML("empty",o);   
+            insertAgentInHTML("",o); 
+            insertShieldInHTML(-1,o); 
              isAlive(true, o);
                 hasSpike(false, o);
                 hasUlt(-1, 0, o);
@@ -198,8 +202,10 @@ function setPlayerOrder(info){
     var assists = [];
     var alive = [];
     var spike = [];
+    var shield = [];
     var ult_points = [];
     var max_ult_points = [];
+    var team = [];
     for(var i = 0; i < 10; i++){
         
          player[i] = info.res.match_info["roster_" + i];
@@ -239,12 +245,18 @@ function setPlayerOrder(info){
                 assists[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).assists;
                 alive[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).alive;
                 spike[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).spike;
+                shield[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).shield;
+                team[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).team;
                 ult_points[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).ult_points;
                 max_ult_points[i] = JSON.parse(info.res.match_info["scoreboard_" + j]).ult_max;
                 currentKills = kills[localPlayerNumber];
+                currentTeam = team[localPlayerNumber];
+
+                insertTeamInHTML(currentTeam);
 
                 isAlive(alive[i], position[i]);
                 hasSpike(spike[i], position[i]);
+                insertShieldInHTML(shield[i],position[i]);
                 hasUlt(ult_points[i], max_ult_points[i], position[i]);
                 for(var q = 1; q <= max_ult_points[i]; q++){
                     //grey
@@ -290,6 +302,8 @@ function setPlayerOrder(info){
         insertRankInHTML(ranks[i],position[i]);
         insertPeakInHTML(peakRanks[i],position[i]);
         insertOwnRank(ranks[localPlayerNumber], mmr[localPlayerNumber]);
+        sendData(procMap,currentTeam);
+        console.log("tried to send map");
 
 
        
@@ -325,7 +339,7 @@ function fetchExternalData(playerID,index) {
         return response.json();
     })
     .then(data => {
-        console.log("External API Data:", data);
+       // console.log("External API Data:", data);
         if(data.data && data.data.current_data.currenttier){
          
             ranks[index] = data.data.current_data.currenttier;
@@ -339,14 +353,14 @@ function fetchExternalData(playerID,index) {
         }
 
         if(data.data && data.data.current_data.ranking_in_tier){
-            console.log("MMR is: " + data.data.current_data.ranking_in_tier);
+            //console.log("MMR is: " + data.data.current_data.ranking_in_tier);
             mmr[index] = data.data.current_data.ranking_in_tier;
             // insertRankInHTML(data.data.currenttierpatched);
         }
 
           if(data.data &&  data.data.highest_rank.tier){
             peakRanks[index] = data.data.highest_rank.tier;
-               console.log("Highest Rank is: " + data.data.highest_rank.tier);
+              // console.log("Highest Rank is: " + data.data.highest_rank.tier);
             // insertRankInHTML(data.data.currenttierpatched);
         }
     })
@@ -390,8 +404,8 @@ function getRoundReport(info){
         if(currentRound !== info.res.match_info.round_number){
             currentRound = info.res.match_info.round_number;
             console.log("New Round");
+            newRound(info.res.match_info.round_number,currentTeam,gameMode.mode);
             if (info.res.match_info.round_report) {
-                console.log("Round Report");
 
                 if(JSON.parse(info.res.match_info.round_report).hit!= undefined){
                currentHits=currentHits + JSON.parse(info.res.match_info.round_report).hit;
@@ -407,7 +421,6 @@ function getRoundReport(info){
                 }
                 
                 accuracy(currentHits,currentKills,currentHeadshots,currentHeadshotKills);
-                console.log("Hits: "+currentHits+" Current HSK: " + currentHeadshotKills + "CurrentKills: "+ currentKills + "Headshots: "+ currentHeadshots);
 
 
             }

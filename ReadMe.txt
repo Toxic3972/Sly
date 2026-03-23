@@ -1,4 +1,3 @@
 ----Latest Version: 0.0.6M----
 -Support for eInk Smoke Guide
 -Support for latest Agent: Miks
--Custom .config file

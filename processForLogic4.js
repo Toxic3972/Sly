@@ -175,7 +175,6 @@ element.innerHTML = map;
 function insertTeamInHTML(team){
 
 var element = document.getElementById("htmlteam");
-console.log("current team: " + team);
 if (element) {
 
     if(team === 1){
@@ -371,7 +370,9 @@ const ValorantTools = {
        "Pawn_Guide_Q_PossessableScout_C":"Skye",
        "Pine" : "Veto",
        "Aggrobot" : "Gekko",
-       "KAY/O" : "kayo"
+       "KAY/O" : "kayo",
+       "Iris" : "Miks"
+
     },
 
     MAP_MAP: {
